@@ -61,9 +61,9 @@ let q = 19; // Prime number
 let keys = generateKeys(p, q);
 let publicKey = keys[0];
 let privateKey = keys[1];
-let e = publicKey[0]; // e
-let d = privateKey[0]; // d
-let n = p * q; // n
+let e = publicKey[0];
+let d = privateKey[0];
+let n = p * q;
 
 console.log("================");
 console.log("p=", p);

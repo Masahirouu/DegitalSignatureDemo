@@ -47,9 +47,9 @@ def pow(base, exponent, modulus):
 p = 137 # Prime number
 q = 19  # Prime number
 publicKey, privateKey = generate_keys(p,q)
-e = publicKey[0] #7 5
-d = privateKey[0] #823 245
-n = p * q  # 7*823=2123 137*19=2603
+e = publicKey[0]
+d = privateKey[0]
+n = p * q
 print("================")
 print("p=",p)
 print("q=",q)
@@ -62,18 +62,18 @@ print("n=",n)
 ### Generating digital signature ###
 ####################################
 message = [17,160,218,29,38,74,28]
-hash_value = hash_message(message) #268
+hash_value = hash_message(message)
 print("message=", message)
 print("hash_value=", hash_value)
 signature = pow(hash_value, d, n)
-print('signature=',signature) #1241
+print('signature=',signature)
 # quit()
 
 ##########################################
 ### Receiver will verify the signature ###
 ##########################################
 received_message = [17,160,218,29,38,74,28]
-received_hash_value = hash_message(received_message) #268
+received_hash_value = hash_message(received_message)
 
 decryped_signature = pow(signature,e,n)
 print("Decrypted hash", decryped_signature)
